@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://daet4xsyg3cwp"]
+
+[ext_resource type="Texture2D" uid="uid://br2q5dsyxcgeu" path="res://resources/left.png" id="1_bd2b1"]
+[ext_resource type="Script" path="res://scenes/game_areas/arrow.gd" id="1_yxb7f"]
+[ext_resource type="Texture2D" uid="uid://d06keiumvchfo" path="res://resources/up.png" id="2_jm3yc"]
+[ext_resource type="Texture2D" uid="uid://d148ocb4sb75l" path="res://resources/right.png" id="3_8sp0w"]
+[ext_resource type="Texture2D" uid="uid://s7cp3rroyfkn" path="res://resources/down_arrow.png" id="4_xviu4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iref0"]
+size = Vector2(150, 150)
+
+[node name="Arrow" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_yxb7f")
+
+[node name="left" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_bd2b1")
+
+[node name="up" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_jm3yc")
+
+[node name="right" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_8sp0w")
+
+[node name="down" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_xviu4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_iref0")
+
+[node name="SelfDestruct" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="timeout" from="SelfDestruct" to="." method="_on_self_destruct_timeout"]

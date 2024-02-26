@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://wohtv2tlhrt5"]
+
+[ext_resource type="Script" path="res://Coffee.gd" id="1_6j4hb"]
+[ext_resource type="Texture2D" uid="uid://cjihkhovnw0a7" path="res://resources/making_drinks/cup.png" id="2_no5tu"]
+
+[node name="Coffee" type="Area2D"]
+script = ExtResource("1_6j4hb")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.8, 0.8)
+polygon = PackedVector2Array(-116, -145, 80, -145, 77, -95, 111, -89, 126, -75, 129, -8, 124, 46, 109, 67, 73, 73, 71, 104, 98, 105, 101, 113, 71, 141, -103, 142, -125, 129, -134, 115, -134, 104, -111, 104)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_no5tu")
+
+[node name="PourRange" type="Node2D" parent="."]
+
+[node name="min" type="Marker2D" parent="PourRange"]
+position = Vector2(-92, -115)
+
+[node name="max" type="Marker2D" parent="PourRange"]
+position = Vector2(61, -115)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

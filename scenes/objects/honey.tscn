@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4d77yi4k8wp7"]
+
+[ext_resource type="PackedScene" uid="uid://bqam8vpnx0p1v" path="res://scenes/objects/condiment.tscn" id="1_6qk7l"]
+[ext_resource type="Script" path="res://Cinnamon.gd" id="2_p2u66"]
+[ext_resource type="Texture2D" uid="uid://dgysiny1tm3b2" path="res://resources/making_drinks/honey.png" id="3_udiix"]
+
+[node name="Honey" instance=ExtResource("1_6qk7l")]
+script = ExtResource("2_p2u66")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-7.5, 0)
+scale = Vector2(0.65, 0.65)
+polygon = PackedVector2Array(-153.5, 37, -130.5, -54, -129.5, -59, -129.5, -68, -127.5, -72, -123.5, -74, -122.5, -92, -117.5, -106, -105.5, -123, -84.5, -142, -74.5, -146, -63.5, -149, -64.5, -159, -62.5, -168, -55.5, -174, -21.5, -174, -15.5, -167, -14.5, -159, -15.5, -149, -3.5, -145, 5.5, -141, 16.5, -134, 16.5, -137, 34.5, -147, 39.5, -147, 42.5, -144, 85.5, -52, 119.5, 24, 131.5, 27, 144.5, 34, 158.5, 50, 166.5, 65, 168.5, 74, 169.5, 93, 164.5, 106, 154.5, 114, 148.5, 117, 132.5, 115, 117.5, 105, 104.5, 90, 95.5, 74, 93.5, 55, 93.5, 43, 96.5, 37, 52.5, -56, 65.5, 2, 75.5, 33, 77.5, 57, 78.5, 76, 73.5, 93, 63.5, 105, 43.5, 115, 26.5, 119, 5.5, 123, -60.5, 123, -88.5, 121, -105.5, 119, -137.5, 107, -152.5, 94, -158.5, 77)
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(-2, -18)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("3_udiix")

@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://bp3vxnii80wtg"]
+
+[ext_resource type="Script" path="res://scenes/objects/spoon.gd" id="1_5ei7y"]
+[ext_resource type="Texture2D" uid="uid://b6cvf57kxvwyw" path="res://resources/spoon.png" id="1_74p8j"]
+[ext_resource type="Texture2D" uid="uid://sh0yviult76s" path="res://resources/spoon_outline.png" id="2_htdyr"]
+[ext_resource type="Texture2D" uid="uid://6eyfmcohs0v8" path="res://resources/honey_scoop.PNG" id="4_6urhc"]
+[ext_resource type="Texture2D" uid="uid://cptow0yrir0oh" path="res://resources/sugar_scoop.PNG" id="5_8ftb7"]
+[ext_resource type="Texture2D" uid="uid://bhqyiicb7mpuq" path="res://resources/black_tea_leaves.PNG" id="6_83sm4"]
+[ext_resource type="Texture2D" uid="uid://b4gmg56os8brn" path="res://resources/ginger.PNG" id="7_qn1ph"]
+[ext_resource type="Texture2D" uid="uid://bqb74caimd4fj" path="res://resources/green_tea_leaves.PNG" id="7_w1r8f"]
+
+[node name="Spoon" type="Area2D" groups=["Spoon"]]
+script = ExtResource("1_5ei7y")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = 1.5708
+polygon = PackedVector2Array(-32, 235, -28, 241, -23, 244, 24, 244, 29, 241, 31, 238, 30, 92, 28, 58, 24, 38, 22, 22, 21, 2, 21, -21, 22, -44, 27, -65, 45, -106, 55, -124, 66, -148, 69, -161, 69, -176, 66, -189, 57, -208, 47, -223, 36, -230, 24, -235, 6, -238, -12, -238, -23, -236, -37, -230, -47, -224, -55, -215, -64, -199, -67, -185, -69, -176, -69, -160, -65, -146, -59, -133, -53, -122, -43, -102, -36, -87, -28, -70, -25, -61, -22, -45, -21, -17, -21, -6, -22, 9, -26, 40, -27, 60, -30, 81, -31, 104, -31, 131, -32, 161, -32, 205)
+
+[node name="outline" type="Sprite2D" parent="."]
+visible = false
+rotation = 1.5708
+texture = ExtResource("2_htdyr")
+
+[node name="spoon" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("1_74p8j")
+
+[node name="honey" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(168, 3)
+rotation = 1.5708
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("4_6urhc")
+
+[node name="sugar" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(170, 4.76837e-07)
+rotation = 1.5708
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("5_8ftb7")
+
+[node name="black_tea" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(170, 4.76837e-07)
+rotation = -1.5708
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_83sm4")
+
+[node name="ginger" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(168, 1)
+rotation = -1.39649
+scale = Vector2(0.528986, 0.528986)
+texture = ExtResource("7_qn1ph")
+
+[node name="green_tea" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(170, 4.76837e-07)
+rotation = -1.5708
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_w1r8f")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

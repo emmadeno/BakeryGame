@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bk7fhcey66ws1"]
+
+[ext_resource type="Script" path="res://scenes/dialogues/agnes/first_meeting_agnes.gd" id="1_55h5m"]
+[ext_resource type="PackedScene" uid="uid://dyqmlonqecdcg" path="res://scenes/ui/dialogue.tscn" id="1_70bqt"]
+[ext_resource type="Texture2D" uid="uid://p2av0uw3e0cf" path="res://resources/dialogue_bg.png" id="1_ilwte"]
+[ext_resource type="PackedScene" uid="uid://cguaninia7ey" path="res://scenes/Bakery.tscn" id="4_pdnv7"]
+
+[node name="First_meeting_agnes" type="Node2D"]
+script = ExtResource("1_55h5m")
+
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_ilwte")
+
+[node name="Dialogue" parent="bg" instance=ExtResource("1_70bqt")]
+offset_left = -930.0
+offset_top = -540.0
+offset_right = -930.0
+offset_bottom = -540.0
+
+[node name="Bakery" parent="." instance=ExtResource("4_pdnv7")]
+visible = false
+
+[connection signal="finished" from="bg/Dialogue" to="." method="_on_dialogue_finished"]
+[connection signal="serve" from="Bakery" to="." method="_on_bakery_serve"]

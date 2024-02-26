@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqam8vpnx0p1v"]
+
+[ext_resource type="Script" path="res://scenes/objects/condiment.gd" id="1_p0epi"]
+
+[node name="Condiment" type="Area2D"]
+script = ExtResource("1_p0epi")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

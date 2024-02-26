@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://d321mm4dy767h"]
+
+[ext_resource type="PackedScene" uid="uid://bqam8vpnx0p1v" path="res://scenes/objects/condiment.tscn" id="1_myoav"]
+[ext_resource type="Script" path="res://scenes/objects/black_tea.gd" id="2_qlcxo"]
+[ext_resource type="Texture2D" uid="uid://dqy86a6350gjv" path="res://resources/making_drinks/black_tea.png" id="3_lbgur"]
+
+[node name="Black_tea" instance=ExtResource("1_myoav")]
+script = ExtResource("2_qlcxo")
+
+[node name="CollisionShape2D" parent="." index="0"]
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-18, -198, 8, -199, 40, -196, 52, -192, 60, -187, 61, -162, 65, -161, 82, -151, 96, -136, 111, -112, 120, -81, 124, -76, 127, -71, 128, -61, 126, -54, 121, -45, 120, -15, 119, 16, 120, 86, 123, 124, 122, 170, 119, 175, 97, 186, 59, 194, 2, 199, -24, 199, -62, 195, -94, 187, -120, 174, -121, 155, -117, 18, -120, -45, -123, -55, -125, -62, -125, -71, -121, -78, -117, -82, -113, -105, -107, -122, -94, -139, -78, -154, -59, -163, -58, -177, -57, -188, -50, -192, -37, -197)
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_lbgur")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://vu3xw7oqm4nt"]
+
+[ext_resource type="PackedScene" uid="uid://bqam8vpnx0p1v" path="res://scenes/objects/condiment.tscn" id="1_8ylax"]
+[ext_resource type="Script" path="res://Ginger.gd" id="2_nmng3"]
+[ext_resource type="Texture2D" uid="uid://b4gmg56os8brn" path="res://resources/ginger.PNG" id="3_h0ulw"]
+
+[node name="Ginger" instance=ExtResource("1_8ylax")]
+scale = Vector2(0.7, 0.7)
+script = ExtResource("2_nmng3")
+
+[node name="CollisionShape2D" parent="." index="0"]
+polygon = PackedVector2Array(-36, 103, -41, 72, -48, 58, -75, 47, -78, 37, -70, 32, -77, 17, -70, -32, -61, -41, -53, -39, -49, -38, -54, -48, -49, -61, -44, -76, -35, -82, -40, -88, -40, -97, -29, -112, -21, -115, -13, -107, -8, -114, 3, -115, 16, -108, 24, -90, 23, -79, 17, -71, 27, -69, 32, -63, 35, -55, 52, -53, 64, -43, 66, -31, 63, -26, 68, -15, 66, 3, 61, 10, 23, 20, 30, 22, 40, 22, 48, 16, 57, 16, 63, 20, 68, 26, 84, 30, 93, 37, 97, 47, 96, 53, 99, 59, 98, 66, 92, 73, 80, 74, 71, 74, 66, 79, 52, 86, 36, 85, 15, 84, 12, 95, 7, 101, 4, 106, 4, 112, -6, 118, -14, 115, -20, 118, -31, 111)
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("3_h0ulw")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bp5nq004m7ntq"]
+
+[ext_resource type="PackedScene" uid="uid://bqam8vpnx0p1v" path="res://scenes/objects/condiment.tscn" id="1_bf4jo"]
+[ext_resource type="Script" path="res://Sugar.gd" id="2_arxuv"]
+[ext_resource type="Texture2D" uid="uid://1dduqwgx6idl" path="res://resources/making_drinks/sugar_can.png" id="3_h7c43"]
+
+[node name="Sugar" instance=ExtResource("1_bf4jo")]
+script = ExtResource("2_arxuv")
+
+[node name="CollisionShape2D" parent="." index="0"]
+scale = Vector2(0.65, 0.65)
+polygon = PackedVector2Array(-118, 95, -105, 8, -94, -48, -94, -61, -105, -86, -105, -96, -96, -104, -93, -125, -85, -132, -73, -135, -35, -138, -34, -148, -28, -160, -21, -167, -8, -172, 4, -172, 14, -169, 25, -161, 30, -154, 34, -142, 34, -137, 64, -136, 80, -133, 90, -127, 93, -123, 94, -116, 95, -109, 94, -104, 99, -100, 103, -95, 103, -87, 102, -83, 99, -75, 93, -64, 92, -61, 92, -53, 95, -34, 105, 17, 115, 83, 121, 129, 120, 148, 117, 155, 107, 163, 86, 169, 63, 171, -59, 171, -80, 170, -99, 166, -111, 161, -118, 154, -121, 145, -121, 124)
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("3_h7c43")

@@ -1,0 +1,125 @@
+[gd_scene load_steps=14 format=3 uid="uid://b63jd4kx52nyo"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_dhu55"]
+[ext_resource type="Texture2D" uid="uid://mtso2ru3m0rm" path="res://resources/background.png" id="2_0mkch"]
+[ext_resource type="PackedScene" uid="uid://bp5nq004m7ntq" path="res://scenes/objects/sugar.tscn" id="2_nd5wq"]
+[ext_resource type="PackedScene" uid="uid://bp3vxnii80wtg" path="res://scenes/objects/spoon.tscn" id="2_xy2d5"]
+[ext_resource type="Texture2D" uid="uid://by5qjq81u1vcv" path="res://resources/ui/basic_button.png" id="3_028sf"]
+[ext_resource type="Texture2D" uid="uid://bs5hccvbb8njj" path="res://resources/ui/basic_button_hover.png" id="4_cs1r8"]
+[ext_resource type="PackedScene" uid="uid://wohtv2tlhrt5" path="res://scenes/objects/coffee.tscn" id="4_ne1uv"]
+[ext_resource type="PackedScene" uid="uid://vu3xw7oqm4nt" path="res://scenes/objects/ginger.tscn" id="4_qyarw"]
+[ext_resource type="PackedScene" uid="uid://c4d77yi4k8wp7" path="res://scenes/objects/honey.tscn" id="4_whcls"]
+[ext_resource type="FontFile" uid="uid://babcd8dobf0e7" path="res://resources/DisposableDroidBB.ttf" id="5_robjd"]
+[ext_resource type="PackedScene" uid="uid://pw27ek2300fw" path="res://scenes/objects/milk.tscn" id="7_8esu1"]
+[ext_resource type="PackedScene" uid="uid://d321mm4dy767h" path="res://scenes/objects/black_tea.tscn" id="8_5to0e"]
+[ext_resource type="PackedScene" uid="uid://7g8f45wcypai" path="res://scenes/objects/green_tea.tscn" id="9_ic7qw"]
+
+[node name="Bakery" type="Node2D"]
+script = ExtResource("1_dhu55")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(957.5, 536.5)
+texture = ExtResource("2_0mkch")
+metadata/_edit_lock_ = true
+
+[node name="Container" type="Control" parent="background"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -957.5
+offset_top = -536.5
+offset_right = -957.5
+offset_bottom = -536.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="TextureButton" type="TextureButton" parent="background/Container"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.96
+anchor_top = 0.96
+anchor_right = 0.96
+anchor_bottom = 0.96
+offset_left = -302.0
+offset_top = -106.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 1
+texture_normal = ExtResource("3_028sf")
+texture_hover = ExtResource("4_cs1r8")
+
+[node name="Label" type="Label" parent="background/Container/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -37.0
+offset_right = 85.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.92549, 0.862745, 0.737255, 1)
+theme_override_fonts/font = ExtResource("5_robjd")
+theme_override_font_sizes/font_size = 70
+text = "SERVE"
+
+[node name="Ingredients" type="Node2D" parent="."]
+position = Vector2(957.5, 536.5)
+scale = Vector2(1.076, 1.005)
+
+[node name="Sugar" parent="Ingredients" instance=ExtResource("2_nd5wq")]
+position = Vector2(-519.052, 76.1194)
+scale = Vector2(0.929368, 0.995025)
+
+[node name="Ginger" parent="Ingredients" instance=ExtResource("4_qyarw")]
+position = Vector2(-724.442, 214.428)
+rotation = -1.16837
+scale = Vector2(0.688832, 0.65869)
+skew = 0.0515132
+
+[node name="Honey" parent="Ingredients" instance=ExtResource("4_whcls")]
+position = Vector2(-319.238, 114.925)
+scale = Vector2(0.929368, 0.995025)
+
+[node name="Coffee" parent="Ingredients" instance=ExtResource("4_ne1uv")]
+position = Vector2(309.015, 130.846)
+scale = Vector2(0.929368, 0.995025)
+
+[node name="Black_tea" parent="Ingredients" instance=ExtResource("8_5to0e")]
+position = Vector2(-617.565, -302.985)
+scale = Vector2(0.929368, 0.995025)
+
+[node name="Green_tea" parent="Ingredients" instance=ExtResource("9_ic7qw")]
+position = Vector2(-768.123, -304.975)
+scale = Vector2(0.929368, 0.995025)
+
+[node name="Milk" parent="Ingredients" instance=ExtResource("7_8esu1")]
+position = Vector2(703.067, -11.4427)
+scale = Vector2(0.929368, 0.995025)
+
+[node name="Spoons" type="Node2D" parent="."]
+position = Vector2(-39, 544)
+metadata/_edit_group_ = true
+
+[node name="Spoon" parent="Spoons" instance=ExtResource("2_xy2d5")]
+position = Vector2(166, -71)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+
+[node name="Spoon2" parent="Spoons" instance=ExtResource("2_xy2d5")]
+position = Vector2(241, -86)
+rotation = 1.5708
+scale = Vector2(0.43, 0.43)
+
+[node name="Spoon3" parent="Spoons" instance=ExtResource("2_xy2d5")]
+position = Vector2(316, -93)
+rotation = 1.5708
+scale = Vector2(0.4, 0.4)
+
+[connection signal="pressed" from="background/Container/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="poured_milk" from="Ingredients/Milk" to="." method="_on_milk_poured_milk"]
